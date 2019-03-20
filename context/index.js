@@ -60,18 +60,16 @@ const context = {
     const dog = {
       breed: 'Chihuahua',
       getBreed: function(){
-
         const innerFunction = function() {
           console.log(this.breed);
         };
     
-        return innerFunction;
+        return innerFunction();
       }
     };
 
-    var breed = dog.getBreed();
 
-    // What is the value of `this` when we call breed()?
+    // What is the value of `this` when we call dog.getBreed()?
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
 

@@ -23,12 +23,16 @@ const kittyPrompts = {
   orangeKittyNames() {
     // Return an array of just the names of kitties who are orange e.g.
     // ['Tiger', 'Snickers']
-
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 0;
+        var orangeKitties = kitties.filter(function(kitty) {
+            if (kitty.color === 'orange') {
+            return orangeKitties;
+        };
+    };
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // 
   },
 
   sortByAge() {
@@ -122,8 +126,13 @@ const modPrompts = {
     //   { mod: 3, studentsPerInstructor: 10 },
     //   { mod: 4, studentsPerInstructor: 8 }
     // ]
+    // iterate over the array returning an array of the same length
+    // return array of objects [{}]
+    // containing key of mod, mod.mod and containing key of studentsPerInstructor, modStudents / modInstructors
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = mods.map(function(mod) {
+        return { mod: mod.mod, studentsPerInstructor: mod.students / mod.instructors };
+    });
     return result;
 
     // Annotation:
@@ -550,18 +559,16 @@ const astronomyPrompts = {
 
   constellationsStarsExistIn() {
     // Return an array of the names of the constellations that the brightest stars are part of e.g.
-    
-    //  [ "Canis Major",
-    //    "Carina",
-    //    "Boötes",
-    //    "Auriga",
-    //    "Orion",
-    //    "Lyra", 
-    //    "Canis Minor", 
-    //    "The Plow", 
-    //    "Orion", 
-    //    "The Little Dipper" ]
-
+    // [ 'Canis Major',
+    //   'Carina',
+    //   'Boötes',
+    //   'Lyra',
+    //   'Auriga',
+    //   'Orion',
+    //   'Canis Minor',
+    //   'Eridanus',
+    //   'Orion',
+    //   'Centaurus' ]
 
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
@@ -688,25 +695,11 @@ const dinosaurPrompts = {
     Return an array of objects that contain the names of humans who have not been cast in a Jurassic Park movie (yet), their nationality, and their imdbStarMeterRating. The object in the array should be sorted alphabetically by nationality.
 
     e.g.
-      [{
-        name: 'Justin Duncan',
-        nationality: 'Alien',
-        imdbStarMeterRating: 0
-      }, 
-      {
-        name: 'Karin Ohman',
-        nationality: 'Chinese',
-        imdbStarMeterRating: 0
-      },
-      {
-        name: 'Tom Wilhoit',
-        nationality: 'Kiwi',
-        imdbStarMeterRating: 1
-      }, {
-        name: 'Jeo D',
-        nationality: 'Martian',
-        imdbStarMeterRating: 0
-      }]
+
+    [ { name: 'Justin Duncan', nationality: 'Alien', imdbStarMeterRating: 0 },
+      { name: 'Tom Wilhoit', nationality: 'Kiwi', imdbStarMeterRating: 1 },
+      { name: 'Jeo D', nationality: 'Martian', imdbStarMeterRating: 0 },
+      { name: 'Karin Ohman', nationality: 'Swedish', imdbStarMeterRating: 0 } ]
     */
 
     const result = 'REPLACE WITH YOUR RESULT HERE';

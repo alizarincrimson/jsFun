@@ -214,14 +214,19 @@ const scope = {
     // Log D: name
     console.log('4d: ', name, 'Brittany');
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+      { C: 'Brittany' },
+      { A: 'welcome' },
+      { B: 'welcome' },
+      { D: 'howdy'}
+    ];
     return result;
 
     // Annotation:
-    // A console.logs
-    // B logs
-    // C logs
-    // D logs
+    // C console.logs first in creation phase, returning the globally declared value for name, which is Brittany
+    // A logs second from within the second if statement after function sayName is invoked, returing the assigned value of Nathaniel (the second if statement assigns Brittany but it's scoped only to the block)
+    // B logs third, also returning Nathaniel from the same if statement
+    // D logs fourth and returns the globally scoped Brittany because it exists outside of the function
   },
 
   exerciseF() {
@@ -229,6 +234,7 @@ const scope = {
 
     function petDog() {
       // Log A: dog
+      console.log('a1: ', dog, 'Spot');
 
       if (dog === 'Spot') {
         let dog = 'Fluffy';
@@ -236,27 +242,41 @@ const scope = {
 
       function rollOver() {
         // Log B: dog
+        console.log('b2: ', dog, 'Spot');
 
         dog = 'Biscuit';
 
         // Log C: dog
+        console.log('c3: ', dog, 'Biscuit');
 
       }
 
       rollOver();
 
       // Log D: dog
+      console.log('d4: ', dog, 'Biscuit');
     }
 
     petDog();
 
     // Log E: dog
+    console.log('e5: ', dog, 'Biscuit');
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+      { A: 'Spot' },
+      { B: 'Spot' },
+      { C: 'Biscuit' },
+      { D: 'Biscuit' },
+      { E: 'Biscuit' }
+    ];
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // A console logs Spot using the globally declared variable
+    // B logs Spot, retaining the original declaration (the assignment within the if statement is only block scoped)
+    // C logs Biscuit, because the value of dog has been reassigned on line 247
+    // D logs Biscuit, retaining the reassigned value from 247
+    // E logs Biscuit, same reason
   },
 
   exerciseG() {

@@ -23,12 +23,16 @@ const kittyPrompts = {
   orangeKittyNames() {
     // Return an array of just the names of kitties who are orange e.g.
     // ['Tiger', 'Snickers']
-
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 0;
+        var orangeKitties = kitties.filter(function(kitty) {
+            if (kitty.color === 'orange') {
+            return orangeKitties;
+        };
+    };
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // 
   },
 
   sortByAge() {
@@ -122,8 +126,13 @@ const modPrompts = {
     //   { mod: 3, studentsPerInstructor: 10 },
     //   { mod: 4, studentsPerInstructor: 8 }
     // ]
+    // iterate over the array returning an array of the same length
+    // return array of objects [{}]
+    // containing key of mod, mod.mod and containing key of studentsPerInstructor, modStudents / modInstructors
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = mods.map(function(mod) {
+        return { mod: mod.mod, studentsPerInstructor: mod.students / mod.instructors };
+    });
     return result;
 
     // Annotation:
